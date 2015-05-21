@@ -13,6 +13,10 @@ body {
 	background-color: #E3CAA1;
 }
 
+#topbar{
+	height: 130px;
+}
+
 .menu {
 	position: fixed;
 	z-index: 9999;
@@ -125,4 +129,6 @@ transform: rotate(90deg);
 	color: #3498db;
 }
 .menu.blue nav ul li a span:hover { color: white;}
+
+
 
