@@ -1,0 +1,128 @@
+@import url("css/font-awesome.css");
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html,body {
+	height: 100%;
+}
+body {
+	background-color: #E3CAA1;
+}
+
+.menu {
+	position: fixed;
+	z-index: 9999;
+	margin: 50px 0 0 0px;
+}
+
+.menu nav {
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+}
+.menu input#slide:checked ~ nav {
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	opacity: 1;
+}
+
+.menu label {
+	position: fixed;
+	font-size: 30px;
+	cursor: pointer;
+	z-index: 9999;
+}
+.menu input#slide {
+	display: none;
+}
+
+.menu input#slide:checked ~ label.open i {
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+transform: rotate(90deg);
+}
+
+.menu label i,
+.menu nav,
+.menu nav ul li a span {
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
+.menu label,
+.menu nav ul li a i,
+.menu nav ul li a span {
+	line-height: 80px;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+}
+.menu nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+.menu nav ul li a i {
+	font-size: 30px;
+}
+
+.menu nav ul li a span {
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	width: 0;
+}
+
+
+
+.menu nav ul li a:hover span {
+	width: 100px;
+	padding: 0 10px;
+}
+.menu nav ul li.active a span {
+	width: 100px;
+	padding: 0 10px;
+}
+
+
+
+.menu.horizontal nav ul li,
+.menu.horizontal nav ul li a span {
+	float: left;
+}
+.menu.left.horizontal nav {
+	margin-left: -50px;
+}
+
+
+
+
+.menu.left.horizontal input#slide:checked ~ nav {
+	margin-left: 80px;
+}
+.menu.right.horizontal nav {
+	margin-right: -50px;
+}
+.menu.right.horizontal input#slide:checked ~ nav {
+	margin-right: 80px;
+}
+
+
+
+.menu.blue label,
+.menu.blue nav ul li a ul li i {
+	background-color: #3498db; bg
+	color: #2980b9; icons;
+}
+
+
+.menu.blue nav ul li a span {
+	background-color: #2980b9;
+	color: #3498db;
+}
+.menu.blue nav ul li a span:hover { color: white;}
+
