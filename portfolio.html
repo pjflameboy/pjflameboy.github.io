@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Johnson</title>
-	<link rel="stylesheet" type="text/css" href="expanding.css">
-	<script type="text/javascript">
-		function activateBox() {
-		document.getElementById("slide").checked = true;
-		}
-	</script>
-	<style>
+	<head>
+		<link rel="stylesheet" type="text/css" href="expanding.css">
+		<title>Paul Johnson</title>
+		<script type="text/javascript">
+			window.addEventListener('load',activateBox,false);
+			function activateBox() {
+			document.getElementById("slide").checked = true;
+			}
+		</script>
+		<style>
 	        .captionOrange
         {
             display: block;
@@ -35,90 +34,23 @@
 		}
 		.parentpho:hover .hiddencap { 
 			  visibility:visible;
-			  opacity:0.7;
+			  opacity:0.5;
 			  transition-delay:0s;
-		}
-		
-		.slider1_container{
-			margin-left: auto;
-			margin-right: auto;
 		}
 	
 	</style>
+		
+		
+		
+	</head>
+	<body>
 	
-	
-</head>
-<body style="font-family:Arial, Verdana;background-color:#fff;" onload="activateBox()">
-    <!-- it works the same with all jquery version from 1.x to 2.x -->
+	    <!-- it works the same with all jquery version from 1.x to 2.x -->
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <!-- use jssor.slider.mini.js (40KB) instead for release -->
     <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
     <script type="text/javascript" src="js/jssor.js"></script>
     <script type="text/javascript" src="js/jssor.slider.min.js"></script>
-	
-	<div class="menu top left horizontal blue">
-		<input id="slide" name="slide"         type="checkbox">
-		<label for="slide" class="icon open">
-		<i class="fa fa-bars"></i>
-		</label>
-		<nav class="navigation">
-			<ul>
-				<li>
-					<a href="index.html">
-					<ul>
-					<li><i class="fa fa-home"></i></li>    
-					<li><span>home</span></li>
-					</ul>
-					</a>
-				</li>	
-				<li>
-					<a href="">
-					<ul>
-					<li><i class="fa fa-user"></i></li>
-					<li><span>about</span></li>
-					</ul>
-					</a>
-				</li>
-				<li class="active">
-					<a href="">
-					<ul>
-						<li><i class="fa fa-camera"></i></li>
-						<li><span>portfolio</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-					<ul>
-						<li><i class="fa fa-bookmark"></i></li>
-						<li><span>blog</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-					<ul>
-						<li><i class="fa fa-send"></i></li>
-						<li><span>contact</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="recipes.html">
-					<ul>
-					<li><i class="fa fa-cutlery"></i></li>    
-					<li><span>Recipes</span></li>
-					</ul>
-					</a>
-				</li>	
-			
-			
-			
-			</ul>
-		</nav>
-	</div>
-	<div id="topbar"></div>
-	
     <script>
 
         jQuery(document).ready(function ($) {
@@ -169,10 +101,73 @@
             //responsive code end
         });
     </script>
-
-    <!-- Jssor Slider Begin -->
-    <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+	
+	
+	<div class="menu top left horizontal blue">
+		<input id="slide" name="slide"         type="checkbox">
+		<label for="slide" class="icon open">
+		<i class="fa fa-bars"></i>
+		</label>
+		<nav class="navigation">
+			<ul>
+				<li class="active">
+					<a href="">
+					<ul>
+					<li><i class="fa fa-home"></i></li>    
+					<li><span>home</span></li>
+					</ul>
+					</a>
+				</li>	
+				<li>
+					<a href="">
+					<ul>
+					<li><i class="fa fa-user"></i></li>
+					<li><span>about</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="portfolio.html">
+					<ul>
+						<li><i class="fa fa-camera"></i></li>
+						<li><span>portfolio</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+					<ul>
+						<li><i class="fa fa-bookmark"></i></li>
+						<li><span>blog</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+					<ul>
+						<li><i class="fa fa-send"></i></li>
+						<li><span>contact</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="recipes.html">
+					<ul>
+						<li><i class="fa fa-cutlery"></i></li>
+						<li><span>Recipes</span></li>
+					</ul>
+					</a>
+				</li>
+			
+			
+			
+			</ul>
+		</nav>
+	</div>
+	<div id="topbar"></div>
+	<h1>Hello, this is my website template. Work in progress, check back soon!</h1>
     <div id="slider1_container" style="position:relative;margin:0 auto;top:0px;left:0px;width:800px;height:300px;overflow:hidden;">
+	
         <!-- Slides Container -->
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 300px;
             overflow: hidden;">
@@ -226,9 +221,14 @@
         <span u="arrowright" class="jssora13r" style="top: 123px; right: 30px;">
         </span>
         <!--#endregion Arrow Navigator Skin End -->
-
+        <a style="display: none" href="http://www.jssor.com">Bootstrap Slider</a>
     </div>
-    <!-- Jssor Slider End -->
+	
+	
+	
+	
+	
+	
+	</body>
 
-</body>
 </html>
