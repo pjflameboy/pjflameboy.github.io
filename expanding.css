@@ -10,17 +10,18 @@ html,body {
 	height: 100%;
 }
 body {
-	background-color: #E3CAA1;
+	background-color: #FFF;
+	#background-color: #E3CAA1;
 }
 
 #topbar{
-	height: 130px;
+	height: 80px;
 }
 
 .menu {
 	position: fixed;
 	z-index: 9999;
-	margin: 50px 0 0 0px;
+	margin: 0px 0 0 0px;
 }
 
 .menu nav {
@@ -84,11 +85,11 @@ transform: rotate(90deg);
 
 
 .menu nav ul li a:hover span {
-	width: 100px;
+	width: 120px;
 	padding: 0 10px;
 }
 .menu nav ul li.active a span {
-	width: 100px;
+	width: 120px;
 	padding: 0 10px;
 }
 
