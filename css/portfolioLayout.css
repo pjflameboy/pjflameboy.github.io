@@ -1,4 +1,5 @@
 .topbox{padding:40px 0 80px 0; background:#000 url('../img/topbox1.jpg') 50% 0 repeat;}
+.parrotDrone{padding:40px 0 80px 0; background:#000 url('../images/purplebckground.png') 50% 0 repeat;}
 
 h1{	
 	padding:0 0 40px 0;
@@ -10,4 +11,64 @@ h1{
 	text-transform:uppercase;
 	text-align:center;
 	}
+	
+	        .captionP
+        {
+            display: block;
+            color: #000;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+			width: 100%
+        }
+        .captionP
+        {
+            background: #FFF;
+            //background-color: rgba(235, 81, 0, 0.6);
+
+        }
+		
+		.captionP a{
+			font-family: 'Lato', sans-serif;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #000;
+			text-decoration: none;
+			font-weight:bold;
+		}	
+		
+		.captioncont{
+			display: inline-block;
+			vertical-align: middle;
+			line-height: normal; 
+		}
+		
+		.hiddencap { 
+			  visibility:hidden;
+			  opacity:0;
+			  transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+		}
+		.parentpho:hover .hiddencap { 
+			visibility:visible;
+			opacity:0.8;
+			transition-delay:0s;
+		}
+		
+	.jssora13l, .jssora13r {
+		display: block;
+		position: absolute;
+		/* size of arrow element */
+		width: 40px;
+		height: 50px;
+		cursor: pointer;
+		background: url(../img/a13.png) no-repeat;
+		overflow: hidden;
+	}
+	.jssora13l { background-position: -10px -35px; }
+	.jssora13r { background-position: -70px -35px; }
+	.jssora13l:hover { background-position: -130px -35px; }
+	.jssora13r:hover { background-position: -190px -35px; }
+	.jssora13l.jssora13ldn { background-position: -250px -35px; }
+	.jssora13r.jssora13rdn { background-position: -310px -35px; }
 	
