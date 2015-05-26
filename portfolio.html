@@ -3,7 +3,9 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="expanding.css">
 		<link rel="stylesheet" type="text/css" href="./css/portfolioLayout.css">
+		<link rel="stylesheet" type="text/css" href="./css/tempstyle.css">
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
 		<title>Paul Johnson</title>
 		<script type="text/javascript">
 			window.addEventListener('load',activateBox,false);
@@ -14,13 +16,15 @@
 		<script>
 		$(function() {
 		  $('a[href*=#]:not([href=#])').click(function() {
-			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			if ($(this).attr('href').indexOf("scale") >= 0){
+			}
+			else if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 
 			  var target = $(this.hash);
 			  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 			  if (target.length) {
 				$('html,body').animate({
-				  scrollTop: target.offset().top
+				  scrollTop: target.offset().top -60
 				}, 1000);
 				return false;
 			  }
@@ -195,6 +199,89 @@
 
 	</article>
 	
+
+	<article class="parrotD" id="parrotDrone">
+	<h2>Hands Free Control Of a Parrot Drone 2.0</h2>
+	<div style="text-align: center;">
+	</br></br></br></br>
+	<img width="100%" src="images/parrotInUse.jpg"></img>
+	</br></br></br></br>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/BolutQBLmBs" frameborder="0" allowfullscreen></iframe>
+	</br></br></br></br>
+	<img src="images/parrotinUseScreen.png"></img>
+	<p class="desc">
+		In 2014, as part of my dissertation, I built a hands free control mechanism for the cheap and open source Parrot Drone 2.0.
+		The application uses an inexpensive infra-red/RGB camera similar to the XBox Kinect to allow the user to pilot the drone as if they are 
+		flying a plane, without a steering.
+	</p>
+	<!--<a class="initialism fadeandscale_open btn btn-success" href="#fadeandscale">Fade &amp; scale</a>-->
+	<a href="#fadeandscale" class="buttonNext fadeandscale_open btn btn-success">Next</a>
+	</div>
+	
+	
+	<!-- Fade & scale -->
+
+<div id="fadeandscale" class="well">
+    <h4>Fade &amp; scale example</h4>
+<pre>
+<code>$('#fadeandscale').popup({
+  transition: 'all 0.3s'
+});</code>
+</pre>
+<pre>
+<code>#fadeandscale {
+  transform: scale(0.8);
+}
+.popup_visible #fadeandscale {
+  transform: scale(1);
+}</code>
+</pre>
+    <button class="fadeandscale_close btn btn-default">Close</button>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#fadeandscale').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#fadeandscale {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #fadeandscale {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	</article>
 	<p>hello</p>
 	<p>hello</p>
 	<p>hello</p>
@@ -209,15 +296,6 @@
 	<p>hello</p>
 	<p>hello</p>
 	<p>hello</p>
-	<article class="parrotD" id="parrotDrone">
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	</article>
 	<p>hello</p>
 	<p>hello</p>
 	<p>hello</p>
