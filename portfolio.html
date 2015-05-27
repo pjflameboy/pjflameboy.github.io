@@ -176,8 +176,14 @@
 					Hands free Parrot Drone control using an Intel 3D IR Camera
 				</div>
 			</a>
+			</div >
+            <div class="parentpho"><img u="image" src="images/lego_Robot.jpg" />
+			<a href="#wallRobot" >
+				<div u="caption" t="*" class="captionP hiddencap" style="position: absolute; top: 250px; left: 0px; width: 100%;height: 50px;">
+					Obstacle avoidance robot using subsumption architecture
+				</div>
+			</a>
 			</div>
-            <div><img u="image" src="img/photography/003.jpg" /></div>
             <div><img u="image" src="img/photography/004.jpg" /></div>
             <div><img u="image" src="img/photography/005.jpg" /></div>
             <div><img u="image" src="img/photography/006.jpg" /></div>
@@ -225,7 +231,7 @@
 
 	<h3>Hand Gesture Control for Remote Control Drones</h3>
 	</br>
-	<p>Youtube Demonstration:<a href="https://youtu.be/BolutQBLmBs">https://youtu.be/BolutQBLmBs</a></p>
+	<p>Youtube Demonstration: <a href="https://youtu.be/BolutQBLmBs">https://youtu.be/BolutQBLmBs</a></p>
 
 	<p>For my final year dissertation as part of my degree in Computer Science and Mathematics, I developed a hands free method of controlling the cheap and open source Parrot Drone 2.0 Quadcopter. This was my first project in the area of computer vision and was worth a third of my grade.</p>
 
@@ -299,10 +305,180 @@ $(document).ready(function () {
 	
 
 	</article>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
-	<p>hello</p>
+	<article class="wallRob" id = "wallRobot">
+		<h2>Automated Wall Following Robot<br/> Using A Subsumption Architecture</h2>
+		<div style="text-align: center;">
+		</br></br></br></br>
+		<img width="100%" src="images/Lego_Mindstorm.jpg"></img>
+		<!-- image source:http://www.flickr.com/photos/34034335@N00/105298464/ Author Eirik Refsdal from Trondheim, NORWAY-->
+		</br></br></br></br>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/LOxWKUIRAlY" frameborder="0" allowfullscreen></iframe>
+		</br></br></br></br>
+		<img width="60%" src="images/lego_Robot.jpg" title="Our robot design, which was voted best"></img>
+		<p class="desc">
+			As part of an Intelligent control and cognitive systems module in final year, I built a robot from NXT lego, with the purpose of making
+			it capable of navigating a maze autonomously. This was achieved using the LeJOS Java library and a variety of sensors including infra-red and
+			ultrasonic. The control module was programmed using a subsumption architecture as defined by Rodney Brooks.
+		</p>
+		
+	<a href="#popupRobot" class="buttonOC nextpopup popupRobot_open btn btn-success">Next</a>
+	<a href="./wall-subsumption-architecture.pdf" target="_blank" class="buttonOC viewpdf">View Coursework Paper</a>
+	</div>
+	
+	
+<div id="popupRobot" class="popupcontent">
+
+	<h3>Lego maze follower using a subsumption architecture</h3>
+	</br>
+	<p>Youtube Demonstration: <a href="https://youtu.be/BolutQBLmBs">https://www.youtube.com/embed/LOxWKUIRAlY</a></p>
+
+	<p>As part of my final year, I took an intelligent control and cognitive systems module, which focused on robotics, computer perception and cognition.
+	The coursework for this required us to research various methods of artificial intelligence architecture to develop our own system to perform a task.</p>
+	
+	<p>I used the Lego NXT robotics kit to design a robot capable of navigating a maze using best path finder logic and sensors to detect obstacles. 
+	The NXT robots come with a Java based 'LeJOS' control library, capable of building complex AI architectures to perform complex tasks. I decided to build 
+	the control module based around the subsumption architectural model first coined by Rodney brooks in the 80s. Instead of guiding behaviour by symbolic 
+	mental representations of the world, subsumption architecture couples sensory information to action selection in an intimate and bottom-up fashion.
+	 It does this by breaking down complex behaviours into sub-behaviours which are organised into a hierarchy of layers. Each layer implements a level of
+	 behavioural competence and higher levels can be thought of as more intelligent behaviours, which a better chance of causing goal completion. The advantage 
+	 of a subsumption based artificial intelligence is that it does not need to store information on its environment, as all decisions are reactory.</p>
+	 
+	<p>The robot was designed with two motorised and independently turning front wheels, with a central, unmotorised rear wheel. The robot relied on two sensors
+	 for environmental input: a front mounted touch sensor bumper, and a rotating ultrasound distance sensor, located on top of the robot, above the control unit.
+	 Later on a third, infra-red sensor was added for more precise distance calculations.</p>
+	 
+	 <p>Java's object oriented nature made it an ideal candidate for building a hierarchical behaviour library for the NXT. Using a simple subsumption hierarchy,
+	 the robot successfully navigated each of the environments it was subjected to and without much digression from its objective. The robot stored no information
+	 on the environment and each decision it made was based on the outcomes of each finite state machine layer of the architecture. The results demonstrate that a 
+	 representationless architecture can be used efficiently to build an intelligent robot.</p>
+
+	<h4>Achievements:</h4>
+	<ul>
+		<li>The coursework scored a high first 92%</li>
+		<li>The project was used during university open day demonstrations to make computer science look more exciting for school children</li>
+		<li>Successfully demonstrated the viability subsumption architecture in intelligent robotic design</li>
+	</ul>
+	<h4>Skills used:</h4>
+	<ul>
+		<li>Java</li>
+		<li>Variety of sensors (Touch, ultrasound and infra-red)</li>
+		<li>Computer Vision</li>
+		<li>AI architecture</li>
+	</ul>
+	
+	
+	</br></br>
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupRobot_close">close</a>
+	</div>
+	
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupRobot').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupRobot {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupRobot {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>		
+		
+		
+		
+	</article>
+	<article class="sapBasis" id="sapBasisEnv">
+		<h2>SAP Basis Command Console</h2>
+		<div style="text-align: center;">
+		</br></br></br></br>
+		<img width="100%" src="images/Lego_Mindstorm.jpg"></img>
+		</br></br></br></br>
+		<img width="50%" src="images/SAPLogo.png"></img>
+		<p class="desc">
+			During my placement year at GlaxoSmithKline Pharmaceuticals I worked as part of a third line Basis support team on a new billion dollar SAP environment.
+			Using a mixture of HTML, CSS, JavaScript, JQuery, C++, Visual Basic / Excel, SAP Management Console and Java, I build a complete control console to bring together
+			 live statistics and access portals of over 100 different SAP instances, as well as all support materials and links. This saved my team hours every week
+			 from having to scour the net for resources and route through documents for access information.
+		</p>
+		
+	<a href="#popupSAP" class="buttonOC nextpopup popupSAP_open btn btn-success">Next</a>
+	<div id="popupSAP" class="popupcontent">
+
+	<h3>SAP Basis Command Console</h3>
+	</br>
+
+	<p>Text Goes Here YOLO</p>
+
+
+	<h4>Achievements:</h4>
+	<ul>
+		<li>Saved my team hours every week by streamlining the work process</li>
+		<li>Solution is still in use today</li>
+		<li>Solution met requirement of being executable inside Microsoft Management Console</li>
+	</ul>
+	<h4>Skills used:</h4>
+	<ul>
+		<li>Java, C++ (Backend programs)</li>
+		<li>Visual Basic</li>
+		<li>Web design languages: HTML, CSS, JavaScript, JQuery</li>
+		<li>SAP Management Console and SAP Service Marketplace Integration</li>
+	</ul>
+	
+	
+	</br></br>
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupSAP_close">close</a>
+	</div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupSAP').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupSAP {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupSAP {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>
+	
+	
+	
+	</article>
+	
+	
+	
 	
 	<p>hello</p>
 	<p>hello</p>

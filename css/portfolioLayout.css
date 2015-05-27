@@ -1,5 +1,7 @@
 .topbox{padding:40px 0 80px 0; background:#000 url('../img/topbox1.jpg') 50% 0 repeat;}
 .parrotD{padding:40px 0 80px 0; background:#000 url('../images/purplebckground.png') 50% 0 repeat;}
+.wallRob{padding:0px 0 80px 0; background:#529f04 url('../images/greenbckground.png') 50% 50% repeat;}
+.sapBasis{padding:0px 0 80px 0; background:#529f04 url('../images/darkbluebckground.png') 50% 50% repeat;}
 
 h1{	
 	padding:0 0 40px 0;
@@ -241,6 +243,10 @@ a.boxclose{
     {
 	content: "\2718";
     }
+
+.viewpdf:before{
+    content: "\270E";        
+}
 	
     
 
