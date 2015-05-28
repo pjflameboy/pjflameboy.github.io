@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="expanding.css">
+		<link rel="stylesheet" type="text/css" href="./css/expanding.css">
 		<link rel="stylesheet" type="text/css" href="./css/portfolioLayout.css">
-		<link rel="stylesheet" type="text/css" href="./css/tempstyle.css">
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
 		<title>Paul Johnson</title>
@@ -35,7 +34,7 @@
 
 		
 		
-		
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
 	
@@ -116,7 +115,7 @@
 					</a>
 				</li>	
 				<li>
-					<a href="">
+					<a href="about.html">
 					<ul>
 					<li><i class="fa fa-user"></i></li>
 					<li><span>about</span></li>
@@ -132,7 +131,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#parrotDrone">
+					<a href="">
 					<ul>
 						<li><i class="fa fa-bookmark"></i></li>
 						<li><span>blog</span></li>
@@ -203,6 +202,9 @@
         <!--#endregion Arrow Navigator Skin End -->
 
     </div>
+	<div class="desclesspad">
+	A little look at some of the work I did at university.
+	</div>
 
 	</article>
 	
@@ -426,8 +428,23 @@ $(document).ready(function () {
 	<h3>SAP Basis Command Console</h3>
 	</br>
 
-	<p>Text Goes Here YOLO</p>
-
+	<p>Whilst on placement at GlaxoSmithKline Pharmaceuticals, I worked on a third line Basis support team on GSK's new billion dollar SAP environment.
+	 The environment contained a dozen SAP solutions and hundreds of instances spread across from development to production. Some of these systems were ABAP, 
+	 and had to be accessed through SAP GUI, some were Java, and had to be accessed through a browser. I noticed that my team were spending at least an hour a 
+	 day wasting time looking for instance URLs, support documentation, and architectural information.</p>
+	 
+	 <p>Despite having almost no web development knowledge at the time, I decided to create a unified, web-based toolset to bring everything together. I built it 
+	 on the principle that any resource you need can be accessed in 7 clicks or less. From the main menu, modelled to look similar to the SAP Service Marketplace, 
+	 the user can drill down by SAP solution, then by development cycle environment, then by instance. From here the user is presented with architectural diagrams, 
+	 access URLs, support documents, and links which launch whichever development environment is most suited for the instance.</p>
+	 
+	 <p>The most useful part of the toolset dropdown menu was the integration with SAP MMC, a management console addon which links with live systems to provide 
+	 live status updates on SAP instances, as well as information such as active work processes and users, database access locks and process lists. I bundled the
+	 toolset with a number of portable applications useful for development, and presented it in a windows start menu style application skin tied to a system tray icon.
+	</p>
+	
+	<p>The toolset I created was distributed to every member of the team across three countries, and was well received. Users saved hours of work each week through 
+	not having to search for resources, and the toolset continues to be used today.</p>
 
 	<h4>Achievements:</h4>
 	<ul>

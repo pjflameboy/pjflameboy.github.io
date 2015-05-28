@@ -1,0 +1,370 @@
+@import url("font-awesome.css");
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html,body {
+	height: 100%;
+}
+body {
+	background-color: #FFF;
+	#background-color: #E3CAA1;
+}
+
+#topbar{
+	height: 50px;
+}
+.topbox{padding:40px 0 80px 0; background:#000 url('../img/topbox1.jpg') 50% 0 repeat;}
+.edu{padding:40px 0px 80px 0px; background:#00869a;}
+.exp{padding:40px 0px 80px 0px; background:#592a59;}
+.site{padding:40px 0px 80px 0px; background:#426320;}
+.edutext{
+	width:60%;
+	margin:0 auto;
+	padding:10px 10px;
+	text-align:center;
+	color:#FFF;
+	font-size:24px;
+}
+.edutext a{
+	text-decoration:none;
+	color:#FFF;
+	border-bottom:2px white dotted;
+}
+
+.topbox h1{	
+	padding:0 0 40px 0;
+	font-family: Arial, sans-serif; font-weight:normal;
+	color:#fff;
+	margin:0 0 15px 0;
+	font-size:80px;
+	line-height:80px;
+	text-transform:uppercase;
+	text-align:center;
+	text-shadow: 0px 2px 0px rgba(255,255,255,0.62)
+	}
+.undermenu{
+	background-color: #3498db;
+	width:100%;
+	height:60px;
+	z-index: 9999;
+	position: fixed;
+	background: rgba(0,0,0, 0.5)
+	
+}
+
+.menu {
+	position: fixed;
+	z-index: 9999;
+	margin: 0px 0 0 0px;
+	width:100%
+
+}
+
+.menu nav {
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+}
+.menu input#slide:checked ~ nav {
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	opacity: 1;
+	width:100%
+}
+
+.menu label {
+	position: fixed;
+	font-size: 30px;
+	cursor: pointer;
+	z-index: 9999;
+}
+.menu input#slide {
+	display: none;
+}
+
+.menu input#slide:checked ~ label.open i {
+-webkit-transform: rotate(90deg);
+-moz-transform: rotate(90deg);
+transform: rotate(90deg);
+}
+
+.menu label i,
+.menu nav,
+.menu nav ul li a span {
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
+.menu label,
+.menu nav ul li a i,
+.menu nav ul li a span {
+	line-height: 60px;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+}
+.menu nav ul {
+	list-style: none;
+	overflow: hidden;
+}
+.menu nav ul li a i {
+	font-size: 20px;
+}
+
+.menu nav ul li a span {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 0;
+	color: #fff;
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+
+
+.menu nav ul li a:hover span {
+	width: 100px;
+	padding: 0 10px;
+	color: rgba(255,255,255, 1.0);
+	background: rgba(255,255,255, 1.0);
+}
+.menu nav ul li.active a span {
+	width: 100px;
+	padding: 0 10px;
+}
+
+
+
+.menu.horizontal nav ul li,
+.menu.horizontal nav ul li a span {
+	float: left;
+}
+.menu.left.horizontal nav {
+	margin-left: -50px;
+}
+
+
+
+
+.menu.left.horizontal input#slide:checked ~ nav {
+	margin-left: 60px;
+}
+.menu.right.horizontal nav {
+	margin-right: -50px;
+}
+.menu.right.horizontal input#slide:checked ~ nav {
+	margin-right: 60px;
+}
+
+
+
+.menu.blue label,
+.menu.blue nav ul li a ul li i {
+	/*background-color: #3498db; bg*/
+	background: rgba(0,0,0, 0.5);
+	/*color: #2980b9; icons;*/
+	color: rgba(255,255,255, 0.5);
+
+}
+
+
+.menu.blue nav ul li a span {
+	/*background-color: #2980b9;
+	color: #3498db;*/
+	background: rgba(0,0,0, 0.5);
+	color: rgba(255,255,255, 0.5);
+
+	
+}
+.menu.blue nav ul li a span:hover { 
+	color: rgba(255,255,255, 1.0);
+	/*color: white;*/ 
+	opacity:1.0;
+	}
+.menu.blue nav ul li a:hover{
+	background: rgba(0,0,0, 1.0);
+	opacity:1.0;
+	color: rgba(255,255,255, 1.0);
+}
+
+.menu.blue nav ul li a ul li i:hover {
+	/*background-color: #3498db; bg*/
+	background: rgba(0,0,0, 1.0);
+	/*color: #2980b9; icons;*/
+	color: rgba(255,255,255, 1.0);
+
+}
+
+.cornericon{
+	
+	color: rgba(255,255,255,1.0);
+}
+
+.menuitem:hover{
+	color: rgba(255,255,255,1.0);
+}
+
+
+.desc{
+	width:40%;
+	margin:0 auto;
+	padding:40px 30px;
+	50% 0 repeat;
+	font-style:italic;
+	text-align:center;
+	color:#FFF;
+	font-size:24px;
+}
+
+.picofme{
+	display: block;
+	margin-left: auto;
+	margin-right:auto;
+	width:200px;
+	height:200px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+}
+
+.desclesspad{
+	width:40%;
+	margin:0 auto;
+	padding:40px 30px 0px 30px;
+	50% 0 repeat;
+	font-style:italic;
+	text-align:center;
+	color:#FFF;
+	font-size:24px;
+}
+
+.articlehead h2{
+	padding:80px 0 40px 0;
+	font-family: Arial, sans-serif; font-weight:normal;
+	color:#fff;
+	margin:0 0 15px 0;
+	font-size:40px;
+	line-height:40px;
+	text-transform:uppercase;
+	text-align:center;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.62)
+}
+
+.websiteFooter{
+	width:100%;
+	float:left;
+	clear:both;
+	background:#384452;
+	-webkit-transition:all 0.5s 0s ease;
+	transition:all 0.5s 0s ease;
+	position:relative;
+	z-index:1000
+}
+
+.websiteFooter .footerContent{
+	margin:0 auto;
+	width:100%;
+	max-width:1160px;
+	padding:40px 0
+}
+
+.websiteFooter .footerContent:before,.websiteFooter .footerContent:after{
+	content:" ";
+	display:table
+}
+
+.websiteFooter .footerContent:after{
+	clear:both
+}
+
+
+.websiteFooter .footerContent .shortInfo{
+	float:left;
+	width:50%;
+	font-family:"museo-sans",sans-serif;
+	color:#687788
+}
+
+.websiteFooter .footerContent .socialIcons{
+	float:right;width:50%
+}
+
+.websiteFooter .footerContent .socialIcons li{
+	float:right;
+	margin:0 0 0 10px
+}
+
+.websiteFooter .footerContent .socialIcons li a{
+	float:left;
+	display:block;
+	height:100%
+}
+
+.websiteFooter .footerContent .socialIcons li a .iconfoot{
+	border-radius:80px;
+	font-size:30px;
+	border:2px solid #272f38;
+	text-align:center;
+	padding:18px;
+	float:left;
+	display:block;
+	color:#fff;
+	background:#272f38;
+	-webkit-transition:all 0.25s 0s ease;
+	transition:all 0.25s 0s ease
+}
+
+
+.websiteFooter .footerContent .socialIcons li:hover .iconfoot{
+	border:2px solid #fff
+}
+
+.websiteFooter .footerContent a{
+	color:#fff;
+	font-weight:700
+}
+
+
+
+.iconfoot{
+	float:left;
+	border-radius:40px;
+	width:40px;
+	height:40px;
+	line-height:36px;
+	font-size:20px;
+	border:2px solid #ccc;
+	text-align:center;
+	padding:0 2px 0 0;
+	margin:30px 10px 0 40px;
+	color:#384452;
+	-webkit-transition:all 0.25s 0s ease;
+	transition:all 0.25s 0s ease
+}
+
+
+.iconfoot{
+	border-radius:40px;
+	width:40px;
+	height:40px;
+	line-height:36px;
+	font-size:20px;
+	display:inline-block;
+	border:2px solid #ccc;
+	margin:0 10px 0 0;
+	position:relative;
+	top:4px;
+	-webkit-transition:all 0.25s 0s ease;
+	transition:all 0.25s 0s ease
+}
+
+
+
+
+

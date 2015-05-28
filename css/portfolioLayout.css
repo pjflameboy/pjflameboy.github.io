@@ -1,4 +1,4 @@
-.topbox{padding:40px 0 80px 0; background:#000 url('../img/topbox1.jpg') 50% 0 repeat;}
+
 .parrotD{padding:40px 0 80px 0; background:#000 url('../images/purplebckground.png') 50% 0 repeat;}
 .wallRob{padding:0px 0 80px 0; background:#529f04 url('../images/greenbckground.png') 50% 50% repeat;}
 .sapBasis{padding:0px 0 80px 0; background:#529f04 url('../images/darkbluebckground.png') 50% 50% repeat;}
@@ -87,24 +87,11 @@ h2{
 .jssora13r.jssora13rdn { background-position: -310px -35px; }
 	
 	
-.desc{
-	width:40%;
-	margin:0 auto;
-	padding:40px 30px;
-	50% 0 repeat;
-	font-style:italic;
-	text-align:center;
-	color:#FFF;
-	font-size:24px;
-}
+
 	
 	
 	
-body {
-	font-family: Arial, sans-serif;
-	background: url(4.jpg);
-	background-size: cover;
-}
+
 
 
 
@@ -140,6 +127,8 @@ body {
  }
 .popupcontent ul{
 	list-style-position: inside;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
 }
 
 a.boxclose{
