@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./css/expanding.css">
+		<title>Paul Johnson</title>
+		<script type="text/javascript">
+			window.addEventListener('load',activateBox,false);
+			function activateBox() {
+			document.getElementById("slide").checked = true;
+			}
+		</script>
+		<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+		
+		
+	</head>
+	<body>
+	<div class="undermenu">
+	<div class="menu top left horizontal blue">
+		<input id="slide" name="slide"         type="checkbox">
+		<label for="slide" class="icon open">
+		<i class="fa fa-bars cornericon"></i>
+		</label>
+		<nav class="navigation">
+			<ul>
+				<li>
+					<a href="index.html">
+					<ul>
+					<li><i class="fa fa-home"></i></li>    
+					<li><span>home</span></li>
+					</ul>
+					</a>
+				</li>	
+				<li>
+					<a href="about.html">
+					<ul>
+					<li><i class="fa fa-user"></i></li>
+					<li><span>about</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="portfolio.html">
+					<ul>
+						<li><i class="fa fa-camera"></i></li>
+						<li><span>portfolio</span></li>
+					</ul>
+					</a>
+				</li>
+				<li class="active">
+					<a href="#">
+					<ul>
+						<li><i class="fa fa-bookmark"></i></li>
+						<li><span>blog</span></li>
+					</ul>
+					</a>
+				</li>
+				<li>
+					<a href="#popupContact" class="popupContact_open">
+					<ul>
+						<li><i class="fa fa-send"></i></li>
+						<li><span>contact</span></li>
+					</ul>
+					</a>
+				</li>	
+			</ul>
+		</nav>
+	</div>
+	</div>
+	<article class="topbox">
+		<div id="topbar"></div>
+		<h1>Coming Soon</h1>
+		<img class="picofme" src="images/me.png" alt="picture of me"></img>
+		
+		<div class="desc">
+			Check back later when I've built this page!
+		
+		</div>
+	
+	</article>
+		<!--contact me popup-->
+	
+	<div id="popupContact" class="popupcontContact">
+
+	<h3>Want to contact me?</h3>
+	</br>
+
+	<p>I'd love to hear from you!</p>
+	<section class="contactContent">
+		<ul class="contactIcons">
+			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
+		</ul>
+	</section>
+	
+	
+	
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupContact_close">close</a>
+	</div>
+	</div>
+
+	<script>
+	$(document).ready(function () {
+
+		$('#popupContact').popup({
+			color: 'white',
+			opacity: 1,
+
+			pagecontainer: '.container',
+			transition: 'all 0.3s'
+		});
+
+	});
+	</script>
+
+	<style>
+	#popupContact {
+		-webkit-transform: scale(0.8);
+		   -moz-transform: scale(0.8);
+			-ms-transform: scale(0.8);
+				transform: scale(0.8);
+	}
+	.popup_visible #popupContact {
+		-webkit-transform: scale(1);
+		   -moz-transform: scale(1);
+			-ms-transform: scale(1);
+				transform: scale(1);
+	}
+	</style>
+	
+	
+	
+	
+		<section>
+	<footer class="wFooter">
+	<section class="footerContent">
+		<ul class="contactIcons">
+			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
+		</ul>
+		<div class="shortInfo">
+			<br/>
+			&copy; 2015 Paul Johnson<br/>
+			Run with <a href="https://www.github.com">Github</a><br>
+			CV available on request
+		</div>
+	</section>
+	</footer>
+	</section>
+	
+	
+	
+	
+	
+	</body>
+
+</html>
