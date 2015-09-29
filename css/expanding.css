@@ -1,5 +1,30 @@
 @import url("font-awesome.css");
 
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v15/cycBf3mfbGkh66G5NhszPQ.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Shadows Into Light';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Shadows Into Light'), local('ShadowsIntoLight'), url(https://fonts.gstatic.com/s/shadowsintolight/v6/clhLqOv7MXn459PTh0gXYFK2TSYBz0eNcHnp4YqE4Ts.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url(https://fonts.gstatic.com/s/yanonekaffeesatz/v7/YDAoLskQQ5MOAgvHUQCcLfGwxTS8d1Q9KiDNCMKLFUM.woff2) format('woff2');
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -37,7 +62,7 @@ body {
 
 .topbox h1{	
 	padding:0 0 40px 0;
-	font-family: Arial, sans-serif; font-weight:normal;
+	font-family: 'Indie Flower', cursive; font-weight:normal;
 	color:#fff;
 	margin:0 0 15px 0;
 	font-size:80px;
@@ -117,8 +142,8 @@ transform: rotate(90deg);
 }
 
 .menu nav ul li a span {
-	font-family: 'Lato', sans-serif;
-	font-size: 16px;
+	font-family: 'Indie Flower', cursive;
+	font-size: 22px;
 	text-transform: uppercase;
 	width: 0;
 	color: #fff;
@@ -212,6 +237,7 @@ transform: rotate(90deg);
 
 
 .desc{
+	font-family: 'Indie Flower', cursive;
 	width:40%;
 	margin:0 auto;
 	padding:40px 30px;
@@ -234,6 +260,7 @@ transform: rotate(90deg);
 }
 
 .desclesspad{
+	font-family: 'Indie Flower', cursive;
 	width:40%;
 	margin:0 auto;
 	padding:40px 30px 0px 30px;
@@ -246,7 +273,19 @@ transform: rotate(90deg);
 
 .articlehead h2{
 	padding:80px 0 40px 0;
-	font-family: Arial, sans-serif; font-weight:normal;
+	font-family: 'Indie Flower', cursive; font-weight:normal;
+	color:#fff;
+	margin:0 0 15px 0;
+	font-size:40px;
+	line-height:40px;
+	text-transform:uppercase;
+	text-align:center;
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.62)
+}
+
+article h2{
+	padding:80px 0 40px 0;
+	font-family: 'Indie Flower', cursive; font-weight:normal;
 	color:#fff;
 	margin:0 0 15px 0;
 	font-size:40px;
