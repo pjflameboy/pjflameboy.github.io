@@ -10,6 +10,9 @@
 			function activateBox() {
 			document.getElementById("slide").checked = true;
 			}
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+				alert('mobile');
+			}
 		</script>
 		<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
 		
