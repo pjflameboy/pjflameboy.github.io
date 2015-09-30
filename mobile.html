@@ -1,77 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="./css/expanding.css">
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<title>Paul Johnson</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/expandingm.css">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
-		<title>Paul Johnson</title>
-		<script type="text/javascript">
-			window.addEventListener('load',activateBox,false);
-			function activateBox() {
-			document.getElementById("slide").checked = true;
-			}
-				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-					window.location = "./mobile.html";
-				}
-
-		</script>
-		<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
-		
-		
 	</head>
 	<body>
-	<div class="undermenu">
-	<div class="menu top left horizontal blue">
-		<input id="slide" name="slide"         type="checkbox">
-		<label for="slide" class="icon open">
-		<i class="fa fa-bars cornericon"></i>
-		</label>
-		<nav class="navigation">
-			<ul>
-				<li class="active">
-					<a href="">
+		<div data-role="header">
+						<div data-role="navbar">
 					<ul>
-					<li><i class="fa fa-home"></i></li>    
-					<li><span>home</span></li>
+						<li><a href="mobile.html" class="ui-btn-active">Home</a></li>
+						<li><a href="aboutm.html" >About</a></li>
+						<li><a href="portfoliom.html" >Portfolio</a></li>
+						<li><a href="blogm.html" >Blog</a></li>
+						<li><a href="#popupContact" class="popupContact_open" >Contact</a></li>
 					</ul>
-					</a>
-				</li>	
-				<li>
-					<a href="about.html">
-					<ul>
-					<li><i class="fa fa-user"></i></li>
-					<li><span>about</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="portfolio.html">
-					<ul>
-						<li><i class="fa fa-camera"></i></li>
-						<li><span>portfolio</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="blog.html">
-					<ul>
-						<li><i class="fa fa-bookmark"></i></li>
-						<li><span>blog</span></li>
-					</ul>
-					</a>
-				</li>
-				<li>
-					<a href="#popupContact" class="popupContact_open">
-					<ul>
-						<li><i class="fa fa-send"></i></li>
-						<li><span>contact</span></li>
-					</ul>
-					</a>
-				</li>	
-			</ul>
-		</nav>
-	</div>
-	</div>
+				</div><!-- /navbar -->
+				
+		</div>
+		
+		
 	<article class="topbox">
 		<div id="topbar"></div>
 		<h1>Welcome!</h1>
@@ -148,20 +100,13 @@
 			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
 			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
 		</ul>
-		<div class="shortInfo">
-			<br/>
+
 			&copy; 2015 Paul Johnson<br/>
 			Run with <a href="https://www.github.com">Github</a><br>
 			CV available on request
-		</div>
+
 	</section>
 	</footer>
 	</section>
-	
-	
-	
-	
-	
 	</body>
-
 </html>
