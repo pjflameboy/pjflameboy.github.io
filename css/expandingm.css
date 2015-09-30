@@ -48,12 +48,12 @@ body {
 .site{padding:40px 0px 80px 0px; background:#426320;}
 .edutext{
 	font-family: 'Indie Flower', cursive;
-	width:60%;
+	width:90%;
 	margin:0 auto;
 	padding:10px 10px;
 	text-align:center;
 	color:#FFF;
-	font-size:24px;
+	font-size:16px;
 }
 .edutext a{
 	text-decoration:none;
