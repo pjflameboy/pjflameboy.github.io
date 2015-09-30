@@ -47,6 +47,7 @@ body {
 .exp{padding:40px 0px 80px 0px; background:#592a59;}
 .site{padding:40px 0px 80px 0px; background:#426320;}
 .edutext{
+	font-family: 'Indie Flower', cursive;
 	width:60%;
 	margin:0 auto;
 	padding:10px 10px;
