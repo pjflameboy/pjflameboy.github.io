@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Paul Johnson</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="./css/expandingm.css">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/portfolioLayout.css">
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<script>
+		<script type="text/javascript">
+			window.addEventListener('load',activateBox,false);
+			function activateBox() {
+			document.getElementById("slide").checked = true;
+			}
+		</script>
+		<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+			if ($(this).attr('href').indexOf("popup") >= 0){
+			}
+			else if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+			  var target = $(this.hash);
+			  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			  if (target.length) {
+				$('html,body').animate({
+				  scrollTop: target.offset().top -60
+				}, 1000);
+				return false;
+			  }
+			}
+		  });
+		});
+		</script>
+
+		
+		
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+	
+	    <!-- it works the same with all jquery version from 1.x to 2.x -->
+    
+    <!-- use jssor.slider.mini.js (40KB) instead for release -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <script>
+
+	
+
+        jQuery(document).ready(function ($) {
+			var _CaptionTransitions = [];
+            var options = {
+                $AutoPlay: true,
+
+                $PauseOnHover: true,                               //[Optional] Whether to pause when mouse over if a slideshow is auto playing, default value is false
+
+                $ArrowKeyNavigation: true,   			            //Allows arrow key to navigate or not
+                $SlideWidth: 600,                                   //[Optional] Width of every slide in pixels, the default is width of 'slides' container
+                //$SlideHeight: 300,                                  //[Optional] Height of every slide in pixels, the default is width of 'slides' container
+                $SlideSpacing: 0, 					                //Space between each slide in pixels
+                $DisplayPieces: 2,                                  //Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 100,                                //The offset position to park slide (this options applys only when slideshow disabled).
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                },
+				
+				$CaptionSliderOptions: {
+					$Class: $JssorCaptionSlider$,
+					$CaptionTransitions: _CaptionTransitions,
+					$PlayInMode: 1,
+					$PlayOutMode: 3
+				}
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 800));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+
+    </script>
+	
+		<div data-role="header">
+						<div data-role="navbar">
+					<ul>
+						<li><a href="mobile.html" class="ui-btn-active">Home</a></li>
+						<li><a href="aboutm.html" >About</a></li>
+						<li><a href="portfoliom.html" >Work</a></li>
+						<li><a href="blogm.html" >Blog</a></li>
+						<li><a href="#popupContact" class="popupContact_open" >Contact</a></li>
+					</ul>
+				</div><!-- /navbar -->
+				
+		</div>
+	<article class="topbox">
+	<div id="topbar"></div>
+	<h1>Previous Work</h1>
+    <div id="slider1_container" name="slider1_container" style="position:relative;margin:0 auto;top:0px;left:0px;width:800px;height:300px;overflow:hidden;">
+	
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 800px; height: 300px;
+            overflow: hidden;">
+            <div class="parentpho">
+			<a href="#parrotDrone" >
+				<img u="image" src="images/parrotdroneprev.jpg" />
+				<div u="caption" t="*" class="captionP hiddencap" style="position: absolute; top: 250px; left: 0px; width: 100%;height: 50px;">
+					Hands free Parrot Drone control using an Intel 3D IR Camera
+				</div>
+			</a>
+			</div >
+			
+            <div class="parentpho">
+				<a href="#wallRobot" >
+				<img u="image" src="images/lego_Robot.jpg" />
+				<div u="caption" t="*" class="captionP hiddencap" style="position: absolute; top: 250px; left: 0px; width: 100%;height: 50px;">
+					Obstacle avoidance robot using subsumption architecture
+				</div>
+				</a>
+			</div>
+			
+            <div class="parentpho">
+				<a href="#sapBasisEnv" >
+				<img u="image" src="images/sapWhiteBG.jpg" />
+				<div u="caption" t="*" class="captionP hiddencap" style="position: absolute; top: 250px; left: 0px; width: 100%;height: 50px;">
+					SAP Basis administration support console
+				</div>
+			</a>
+			</div>
+        </div>
+        
+
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora13l" style="top: 123px; left: 30px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora13r" style="top: 123px; right: 30px;">
+        </span>
+        <!--#endregion Arrow Navigator Skin End -->
+
+    </div>
+	<div class="desclesspad">
+	A little look at some of the work I did at university.
+	</div>
+
+	</article>
+	
+
+	<article class="parrotD" id="parrotDrone">
+	<h2>Hands Free Control Of a Parrot Drone 2.0</h2>
+	<div style="text-align: center;">
+	</br></br></br></br>
+	<img width="100%" src="images/parrotInUse.jpg"></img>
+	</br></br></br></br>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/BolutQBLmBs" frameborder="0" allowfullscreen></iframe>
+	</br></br></br></br>
+	<img width="90%" src="images/parrotinUseScreen.png"></img>
+	<p class="desc">
+		In 2014, as part of my dissertation, I built a hands free control mechanism for the cheap and open source Parrot Drone 2.0.
+		The application uses an inexpensive infra-red/RGB camera similar to the XBox Kinect to allow the user to pilot the drone as if they are 
+		flying a plane, without a steering.
+	</p>
+	<!--<a class="initialism popupDrone_open btn btn-success" href="#popupDrone">Fade &amp; scale</a>-->
+	
+	<a href="#popupDrone" class="buttonOC nextpopup popupDrone_open btn btn-success">Read More</a>
+	</div>
+	
+	
+	<!-- Fade & scale -->
+<div id="popupDrone" class="popupcontent">
+
+	<h3>Hand Gesture Control for Remote Control Drones</h3>
+	</br>
+	<p>Youtube Demonstration: <a href="https://youtu.be/BolutQBLmBs">https://youtu.be/BolutQBLmBs</a></p>
+
+	<p>For my final year dissertation as part of my degree in Computer Science and Mathematics, I developed a hands free method of controlling the cheap and open source Parrot Drone 2.0 Quadcopter. This was my first project in the area of computer vision and was worth a third of my grade.</p>
+
+	<p>The project used an Intel Perceptual Computer Senz3D camera, with similar technology to an Xbox Kinect. This combines a regular RGB camera with an infra-red camera to provide the user with a 3D mapping, using the infra-red beams to provide z coordinates. The Parrot Drone 2.0 used to demonstrate the viability of hands free drone control is a sub £300 quad rotor drone with a native C++ control library.</p>
+
+	<p>The idea was to have the user fly the drone with an imaginary plane yoke steering wheel as shown in the youtube video above. The user places both fists in front of the camera, and the input module tracks the centre of the hands using the Intel Perceptual library, along with a Bilateral Filter to smooth results. The centre of the hands as calculated by the module is then drawn on the screen and the user aligns these circles to the static 'start circles'. Take off and land commands are a 'thumbs up sign' and the drone is then steered like a plane in all 6 degrees of freedom. The user interface is designed to be customisable, to show the cameras rgb stream, infra-red mapping, or both. The interface also gives live readouts of yaw, pitch, roll, altitude and speed, as well as the option to view the drone's camera streams.</p>
+
+	<p>To Make the project as flexible as possible, I took an 'Internet of Things' approach to development and the program was split into two parts, the input and output modules. The input module is where the user inputs commands for the drone through the camera. The input module then provided these commands to the 'Bath Sensor Framework' which allows for scalability as any number of drones can listen for commands from the input module. As the commands are simple floating point direction and speed calculations, any type of drone can be easily programmed to listen for commands. To prove this flexibility I connected a remote control tank and 3 Parrot Drones to the framework simultaneously and controlled all of them.</p>
+
+	<p>As the Bath Sensor Framework was written in pure Java, I used a java wrapper on the Intel Perceptual C++ library, as well as the YADrone Java based Parrot Drone library to create a full application in Java. It's worth noting that due to the flexibility of the Bath Framework, both the input and output modules can be programmed in any language. To demonstrate this, I used a node js library and a Leap Motion to provide an alternative control method.</p>
+
+	<h4>Achievements:</h4>
+	<ul>
+		<li>The dissertation was awarded a high first of 78%</li>
+		<li>The project was used during university open day demonstrations to make computer science look more exciting for school children</li>
+		<li>Successfully demonstrated the viability of hands free control for drones, with a fully functional, networked and scalable application</li>
+	</ul>
+	<h4>Skills used:</h4>
+	<ul>
+		<li>Java</li>
+		<li>Bath Sensor Framework (XMPP/RDF Based communication)</li>
+		<li>Computer Vision (on the fly processing of camera feed)</li>
+		<li>GUI development</li>
+	</ul>
+	</br></br>
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupDrone_close">close</a>
+	</div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupDrone').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupDrone {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupDrone {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	</article>
+	<article class="wallRob" id = "wallRobot">
+		<h2>Automated Wall Following Robot<br/> Using A Subsumption Architecture</h2>
+		<div style="text-align: center;">
+		</br></br></br></br>
+		<img width="100%" src="images/Lego_Mindstorm.jpg"></img>
+		<!-- image source:http://www.flickr.com/photos/34034335@N00/105298464/ Author Eirik Refsdal from Trondheim, NORWAY-->
+		</br></br></br></br>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/LOxWKUIRAlY" frameborder="0" allowfullscreen></iframe>
+		</br></br></br></br>
+		<img width="60%" src="images/lego_Robot.jpg" title="Our robot design, which was voted best"></img>
+		<p class="desc">
+			As part of an Intelligent control and cognitive systems module in final year, I built a robot from NXT lego, with the purpose of making
+			it capable of navigating a maze autonomously. This was achieved using the LeJOS Java library and a variety of sensors including infra-red and
+			ultrasonic. The control module was programmed using a subsumption architecture as defined by Rodney Brooks.
+		</p>
+		
+	<a href="#popupRobot" class="buttonOC nextpopup popupRobot_open btn btn-success">Read More</a>
+	<a href="docs/wall-subsumption-architecture.pdf" target="_blank" class="buttonOC viewpdf">View Coursework Paper</a>
+	</div>
+	
+	
+<div id="popupRobot" class="popupcontent">
+
+	<h3>Lego maze follower using a subsumption architecture</h3>
+	</br>
+	<p>Youtube Demonstration: <a href="https://youtu.be/BolutQBLmBs">https://www.youtube.com/embed/LOxWKUIRAlY</a></p>
+
+	<p>As part of my final year, I took an intelligent control and cognitive systems module, which focused on robotics, computer perception and cognition.
+	The coursework for this required us to research various methods of artificial intelligence architecture to develop our own system to perform a task.</p>
+	
+	<p>I used the Lego NXT robotics kit to design a robot capable of navigating a maze using best path finder logic and sensors to detect obstacles. 
+	The NXT robots come with a Java based 'LeJOS' control library, capable of building complex AI architectures to perform complex tasks. I decided to build 
+	the control module based around the subsumption architectural model first coined by Rodney brooks in the 80s. Instead of guiding behaviour by symbolic 
+	mental representations of the world, subsumption architecture couples sensory information to action selection in an intimate and bottom-up fashion.
+	 It does this by breaking down complex behaviours into sub-behaviours which are organised into a hierarchy of layers. Each layer implements a level of
+	 behavioural competence and higher levels can be thought of as more intelligent behaviours, which a better chance of causing goal completion. The advantage 
+	 of a subsumption based artificial intelligence is that it does not need to store information on its environment, as all decisions are reactory.</p>
+	 
+	<p>The robot was designed with two motorised and independently turning front wheels, with a central, unmotorised rear wheel. The robot relied on two sensors
+	 for environmental input: a front mounted touch sensor bumper, and a rotating ultrasound distance sensor, located on top of the robot, above the control unit.
+	 Later on a third, infra-red sensor was added for more precise distance calculations.</p>
+	 
+	 <p>Java's object oriented nature made it an ideal candidate for building a hierarchical behaviour library for the NXT. Using a simple subsumption hierarchy,
+	 the robot successfully navigated each of the environments it was subjected to and without much digression from its objective. The robot stored no information
+	 on the environment and each decision it made was based on the outcomes of each finite state machine layer of the architecture. The results demonstrate that a 
+	 representationless architecture can be used efficiently to build an intelligent robot.</p>
+
+	<h4>Achievements:</h4>
+	<ul>
+		<li>The coursework scored a high first 92%</li>
+		<li>The project was used during university open day demonstrations to make computer science look more exciting for school children</li>
+		<li>Successfully demonstrated the viability subsumption architecture in intelligent robotic design</li>
+	</ul>
+	<h4>Skills used:</h4>
+	<ul>
+		<li>Java</li>
+		<li>Variety of sensors (Touch, ultrasound and infra-red)</li>
+		<li>Computer Vision</li>
+		<li>AI architecture</li>
+	</ul>
+	
+	
+	</br></br>
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupRobot_close">close</a>
+	</div>
+	
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupRobot').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupRobot {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupRobot {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>		
+		
+		
+		
+	</article>
+	<article class="sapBasis" id="sapBasisEnv">
+		<h2>SAP Basis Command Console</h2>
+		<div style="text-align: center;">
+		</br></br></br></br>
+		<img width="100%" src="images/esatToolset.png"></img>
+		</br></br></br></br>
+		<img width="30%" src="images/SAPLogo.png"></img>
+		</br></br></br></br>
+		<img width="30%" src="images/sapMMC.gif"></img>
+		<p class="desc">
+			During my placement year at GlaxoSmithKline Pharmaceuticals I worked as part of a third line Basis support team on a new billion dollar SAP environment.
+			Using a mixture of HTML, CSS, JavaScript, JQuery, C++, Visual Basic / Excel, SAP Management Console and Java, I build a complete control console to bring together
+			 live statistics and access portals of over 100 different SAP instances, as well as all support materials and links. This saved my team hours every week
+			 from having to scour the net for resources and route through documents for access information.
+		</p>
+		
+	<a href="#popupSAP" class="buttonOC nextpopup popupSAP_open btn btn-success">Read More</a>
+	<div id="popupSAP" class="popupcontent">
+
+	<h3>SAP Basis Command Console</h3>
+	</br>
+
+	<p>Whilst on placement at GlaxoSmithKline Pharmaceuticals, I worked on a third line Basis support team on GSK's new billion dollar SAP environment.
+	 The environment contained a dozen SAP solutions and hundreds of instances spread across from development to production. Some of these systems were ABAP, 
+	 and had to be accessed through SAP GUI, some were Java, and had to be accessed through a browser. I noticed that my team were spending at least an hour a 
+	 day wasting time looking for instance URLs, support documentation, and architectural information.</p>
+	 
+	 <p>Despite having almost no web development knowledge at the time, I decided to create a unified, web-based toolset to bring everything together. I built it 
+	 on the principle that any resource you need can be accessed in 7 clicks or less. From the main menu, modelled to look similar to the SAP Service Marketplace, 
+	 the user can drill down by SAP solution, then by development cycle environment, then by instance. From here the user is presented with architectural diagrams, 
+	 access URLs, support documents, and links which launch whichever development environment is most suited for the instance.</p>
+	 
+	 <p>The most useful part of the toolset dropdown menu was the integration with SAP MMC, a management console addon which links with live systems to provide 
+	 live status updates on SAP instances, as well as information such as active work processes and users, database access locks and process lists. I bundled the
+	 toolset with a number of portable applications useful for development, and presented it in a windows start menu style application skin tied to a system tray icon.
+	</p>
+	
+	<p>The toolset I created was distributed to every member of the team across three countries, and was well received. Users saved hours of work each week through 
+	not having to search for resources, and the toolset continues to be used today.</p>
+
+	<h4>Achievements:</h4>
+	<ul>
+		<li>Saved my team hours every week by streamlining the work process</li>
+		<li>Solution is still in use today</li>
+		<li>Solution met requirement of being executable inside Microsoft Management Console</li>
+	</ul>
+	<h4>Skills used:</h4>
+	<ul>
+		<li>Java, C++ (Backend programs)</li>
+		<li>Visual Basic</li>
+		<li>Web design languages: HTML, CSS, JavaScript, JQuery</li>
+		<li>SAP Management Console and SAP Service Marketplace Integration</li>
+	</ul>
+	
+	
+	</br></br>
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupSAP_close">close</a>
+	</div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupSAP').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupSAP {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupSAP {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>
+
+
+<!--contact me popup-->
+	
+	<div id="popupContact" class="popupcontContact">
+
+	<h3>Want to contact me?</h3>
+	</br>
+
+	<p>I'd love to hear from you!</p>
+	<section class="contactContent">
+		<ul class="contactIcons">
+			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
+		</ul>
+	</section>
+	
+	
+	
+	<div style="text-align:center;">
+	<a href="" class="buttonOC closepopup popupContact_close">close</a>
+	</div>
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#popupContact').popup({
+		color: 'white',
+		opacity: 1,
+
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+});
+</script>
+
+<style>
+#popupContact {
+    -webkit-transform: scale(0.8);
+       -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+}
+.popup_visible #popupContact {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+</style>
+
+
+
+
+
+	
+	
+	
+	</article>
+	<section>
+	<footer class="wFooter">
+	<section class="footerContent">
+		<ul class="contactIcons">
+			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
+		</ul>
+		<div class="shortInfo">
+			<br/>
+			&copy; 2015 Paul Johnson<br/>
+			Run with <a href="https://www.github.com">Github</a><br>
+			CV available on request
+		</div>
+	</section>
+	</footer>
+	</section>	
+	
+	</body>
+
+</html>
