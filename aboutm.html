@@ -8,12 +8,6 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery.popupoverlay.js"></script>
-		<script type="text/javascript">
-			window.addEventListener('load',activateBox,false);
-			function activateBox() {
-			document.getElementById("slide").checked = true;
-			}
-		</script>
 		<script>
 		$(function() {
 		  $('a[href*=#]:not([href=#])').click(function() {
@@ -32,15 +26,14 @@
 			}
 		  });
 		});
-		</script>		
-		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+		</script>
 	</head>
 	<body>
 		<div data-role="header">
 						<div data-role="navbar">
 					<ul>
-						<li><a href="mobile.html" >Home</a></li>
-						<li><a href="aboutm.html" class="ui-btn-active">About</a></li>
+						<li><a href="mobile.html" class="ui-btn-active">Home</a></li>
+						<li><a href="aboutm.html" >About</a></li>
 						<li><a href="portfoliom.html" >My Work</a></li>
 						<li><a href="blogm.html" >Blog</a></li>
 						<li><a href="#popupContact" class="popupContact_open" >Contact</a></li>
@@ -48,6 +41,8 @@
 				</div><!-- /navbar -->
 				
 		</div>
+		
+		
 	<article class="topbox">
 		<div id="topbar"></div>
 		<h1>About Me</h1>
@@ -59,8 +54,7 @@
 		</div>
 	
 	</article>
-	
-	<article class="articlehead edu">
+		<article class="articlehead edu">
 		<h2>Education</h2>
 		<div class="edutext">
 		<p>In September 2010, I started my degree in Computer Science and Mathematics at the University of Bath. I had no prior knowledge of programming and was quickly throw head first into Python and Java. I learnt so much there and after 4 years of blood, sweat, tears (and laughs) I graduated with a 2.1 BSc (Hons).</p>
@@ -95,37 +89,18 @@
 		<img width="20%" src="images/html5img.png"></img><img width="20%" src="images/css3image.png"></img><img width="20%" src="images/gitimage.png"></img>
 	
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</article>
-	<section>
-	<footer class="wFooter">
-	<section class="footerContent">
-		<ul class="contactIcons">
-			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
-			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
-		</ul>
-		<div class="shortInfo">
-			<br/>
-			&copy; 2015 Paul Johnson<br/>
-			Run with <a href="https://www.github.com">Github</a><br>
-			CV available on request
-		</div>
-	</section>
-	</footer>
-	</section>
-	
 
+	</article>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		<!--contact me popup-->
 	
 	<div id="popupContact" class="popupcontContact">
@@ -148,45 +123,56 @@
 	<div style="text-align:center;">
 	<a href="" class="buttonOC closepopup popupContact_close">close</a>
 	</div>
-</div>
+	</div>
 
-<script>
-$(document).ready(function () {
+	<script>
+	$(document).ready(function () {
 
-    $('#popupContact').popup({
-		color: 'white',
-		opacity: 1,
+		$('#popupContact').popup({
+			color: 'white',
+			opacity: 1,
 
-        pagecontainer: '.container',
-        transition: 'all 0.3s'
-    });
+			pagecontainer: '.container',
+			transition: 'all 0.3s'
+		});
 
-});
-</script>
+	});
+	</script>
 
-<style>
-#popupContact {
-    -webkit-transform: scale(0.8);
-       -moz-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-            transform: scale(0.8);
-}
-.popup_visible #popupContact {
-    -webkit-transform: scale(1);
-       -moz-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-}
-</style>
+	<style>
+	#popupContact {
+		-webkit-transform: scale(0.8);
+		   -moz-transform: scale(0.8);
+			-ms-transform: scale(0.8);
+				transform: scale(0.8);
+	}
+	.popup_visible #popupContact {
+		-webkit-transform: scale(1);
+		   -moz-transform: scale(1);
+			-ms-transform: scale(1);
+				transform: scale(1);
+	}
+	</style>
 	
 	
 	
 	
-	
-	
-	
-	
-	
+		<section>
+	<footer class="wFooter">
+	<section class="footerContent">
+		<ul class="contactIcons">
+			<li style="list-style-type: none;"><a href="mailto:paul.johnson3@bath.edu"><i class="iconfoot fa fa-envelope"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.linkedin.com/profile/view?id=202137978"><i class="iconfoot fa fa-linkedin"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://www.youtube.com/channel/UCEzGJ1a9-IxQS9WbwO77QDQ/videos"><i class="iconfoot fa fa-youtube-square"></i></a></li>
+			<li style="list-style-type: none;"><a href="https://github.com/pjflameboy"><i class="iconfoot fa fa-git"></i></a></li>
+		</ul>
+
+			&copy; 2015 Paul Johnson<br/>
+			Run with <a href="https://www.github.com">Github</a><br>
+			CV available on request
+
+	</section>
+	</footer>
+	</section>
 	</body>
-
 </html>
