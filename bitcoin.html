@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Working</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/5cebd8ecef.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Orbitron");
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *::after, *::before {
+            box-sizing: inherit;
+        }
+
+            *, *:before, *:after {
+                box-sizing: border-box;
+                outline: none;
+            }
+
+        body {
+            margin: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .panel {
+            width: 100%;
+            height: 50%;
+            background-color: #999;
+        }
+
+        .border-horizontal {
+            border-right: 3px solid rgba(255,255,255,0.3) !important;
+            border-left: 3px solid rgba(255,255,255,0.3) !important;
+        }
+
+        .tbl-ticker {
+            width: 100%;
+            height: 100%;
+            color: white;
+            margin: 0 auto;
+            border-spacing: 0;
+            border-collapse: collapse;
+            border-right: 3px solid transparent;
+        }
+
+            .tbl-ticker > tbody > tr > td:first-child {
+                text-align: center;
+                font-size: 120px;
+                width: 200px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-right: 3px transparent solid;
+                 border-left: 3px transparent solid;
+            }
+
+            .tbl-ticker > tbody > tr > td:nth-child(2) {
+                text-align: center;
+                font-size: 100px;
+                width: 120px;
+            }
+
+
+        .box {
+            width: 100%;
+            text-align: right;
+            padding: 20px 100px 0 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 112px;
+        }
+
+            .box span {
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+                line-height: 1.75;
+            }
+
+        .price-up {
+            background-color: #008000;
+        }
+
+        .price-down {
+            background-color: #cc0000;
+        }
+
+        .dir-up,
+        .dir-down {
+            display: none;
+        }
+        #ethLogo {
+            width: 140px;
+            height: 140px;
+        }
+    </style>
+    <script>
+
+
+        $(document).ready(function () {
+            setInterval(getBtcPrice, 2000);
+            setTimeout(function() {
+                setInterval(getLtcPrice, 2000);
+            }, 1000);
+
+        });
+
+
+        const lblprice = document.querySelector('.price');
+
+        function getBtcPrice() {
+            getPrice("BTC");
+        }
+        function getEthPrice() {
+            getPrice("ETH");
+        }
+        function getLtcPrice() {
+            getPriceInBTC("LTC");
+        }
+
+        function getPrice(currency) {
+            var currentPrice = new XMLHttpRequest();
+
+            currentPrice.open('GET', 'https://api.gdax.com/products/' + currency + '-EUR/book', true);
+            currentPrice.onreadystatechange = function () {
+                if (currentPrice.readyState == 4) {
+                    var ticker = JSON.parse(currentPrice.responseText);
+                    var price = ticker.bids[0][0];
+                    price = toInteger(price);
+                    var panel = $("." + currency.toLowerCase() + "-panel");
+                    var currBox = panel.find(".tbl-ticker>tbody>tr>td:first-child");
+
+                    currBox.addClass("border-horizontal");
+                    setTimeout(function () {
+                        currBox.removeClass("border-horizontal");
+                    }, 200);
+
+                    var lblprice = panel.find(".price");
+
+                    var lastPrice = toInteger(lblprice.data("last"));
+
+                    var dirUp = panel.find(".dir-up");
+                    var dirDown = panel.find(".dir-down");
+
+                    if (lastPrice > price) {
+
+                        panel.addClass("price-down");
+                        panel.removeClass("price-up");
+                        dirUp.hide();
+                        dirDown.show();
+                    } else if (lastPrice < price) {
+                        panel.addClass("price-up");
+                        panel.removeClass("price-down");
+                        dirDown.hide();
+                        dirUp.show();
+                    }
+
+                    lblprice.data("last", price);
+                    lblprice.text("€ " + numberWithCommas(price));
+                };
+            };
+            currentPrice.send();
+        }
+        function getPriceInBTC(currency) {
+            var currentPrice = new XMLHttpRequest();
+
+            currentPrice.open('GET', 'https://api.gdax.com/products/' + currency + '-BTC/book', true);
+            currentPrice.onreadystatechange = function () {
+                if (currentPrice.readyState == 4) {
+                    var ticker = JSON.parse(currentPrice.responseText);
+                    var price = ticker.bids[0][0];
+
+                    var panel = $("." + currency.toLowerCase() + "-panel");
+                    var currBox = panel.find(".tbl-ticker>tbody>tr>td:first-child");
+
+                    currBox.addClass("border-horizontal");
+                    setTimeout(function () {
+                        currBox.removeClass("border-horizontal");
+                    }, 200);
+
+                    var lblprice = panel.find(".price");
+
+                    var lastPrice = toInteger(lblprice.data("last"));
+
+                    var dirUp = panel.find(".dir-up");
+                    var dirDown = panel.find(".dir-down");
+
+                    if (lastPrice > price) {
+
+                        panel.addClass("price-down");
+                        panel.removeClass("price-up");
+                        dirUp.hide();
+                        dirDown.show();
+                    } else if (lastPrice < price) {
+                        panel.addClass("price-up");
+                        panel.removeClass("price-down");
+                        dirDown.hide();
+                        dirUp.show();
+                    }
+
+                    lblprice.data("last", price);
+                    lblprice.text(price);
+                };
+            };
+            currentPrice.send();
+        }
+
+        const numberWithCommas = (x) => {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function toInteger(number) {
+            return Math.round(  // round to nearest integer
+                Number(number)    // type cast your input
+            );
+        };
+
+
+    </script>
+</head>
+<body>
+
+    <div class="btc-panel panel">
+        <table class="tbl-ticker">
+            <tr>
+                <td><i class="fa fa-bitcoin"></i></td>
+                <td>
+                    <i class="fa fa-caret-up dir-up"></i>
+                    <i class="fa fa-caret-down dir-down"></i>
+                </td>
+                <td>
+                    <div class="box">
+                        <span class="price" data-last="0">$ -----</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="ltc-panel panel">
+        <table class="tbl-ticker">
+            <tr>
+                <td>
+                  <img src="ltc800.png" height="140px" width="140px">
+                <td>
+                    <i class="fa fa-caret-up dir-up"></i>
+                    <i class="fa fa-caret-down dir-down"></i>
+                </td>
+                <td>
+                    <div class="box">
+                        <span class="price" data-last="0">$ -----</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+</body>
+</html>
