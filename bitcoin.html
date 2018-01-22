@@ -120,25 +120,26 @@
         const lblprice = document.querySelector('.price');
 
         function getBtcPrice() {
-            getPrice("BTC");
+            getPrice("BTC","GBP");
         }
         function getEthPrice() {
             getPrice("ETH");
         }
         function getLtcPrice() {
+            getPrice("LTC","EUR")
             getPriceInBTC("LTC");
         }
 
-        function getPrice(currency) {
+        function getPrice(coin, currency) {
             var currentPrice = new XMLHttpRequest();
 
-            currentPrice.open('GET', 'https://api.gdax.com/products/' + currency + '-EUR/book', true);
+            currentPrice.open('GET', 'https://api.gdax.com/products/' + coin + '-' + currency + '/book', true);
             currentPrice.onreadystatechange = function () {
                 if (currentPrice.readyState == 4) {
                     var ticker = JSON.parse(currentPrice.responseText);
                     var price = ticker.bids[0][0];
                     price = toInteger(price);
-                    var panel = $("." + currency.toLowerCase() + "-panel");
+                    var panel = $("." + coin.toLowerCase() + "-panel");
                     var currBox = panel.find(".tbl-ticker>tbody>tr>td:first-child");
 
                     currBox.addClass("border-horizontal");
@@ -167,7 +168,15 @@
                     }
 
                     lblprice.data("last", price);
-                    lblprice.text("€ " + numberWithCommas(price));
+                    if(currency == 'EUR'){
+                      lblprice.text("€ " + numberWithCommas(price));
+                    }
+                    else if(currency == 'GBP'){
+                      lblprice.text("£ " + numberWithCommas(price));
+                    }
+                    else{
+                      lblprice.text("$ " + numberWithCommas(price));
+                    }
                 };
             };
             currentPrice.send();
@@ -189,7 +198,7 @@
                         currBox.removeClass("border-horizontal");
                     }, 200);
 
-                    var lblprice = panel.find(".price");
+                    var lblprice = panel.find(".priceinbtc");
 
                     var lastPrice = toInteger(lblprice.data("last"));
 
@@ -241,7 +250,7 @@
                 </td>
                 <td>
                     <div class="box">
-                        <span class="price" data-last="0">$ -----</span>
+                        <span class="price" data-last="0">£ -----</span>
                     </div>
                 </td>
             </tr>
@@ -258,7 +267,20 @@
                 </td>
                 <td>
                     <div class="box">
-                        <span class="price" data-last="0">$ -----</span>
+                        <span class="price" data-last="0">£ -----</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  <img src="ltc800.png" height="140px" width="140px">
+                <td>
+                    <i class="fa fa-caret-up dir-up"></i>
+                    <i class="fa fa-caret-down dir-down"></i>
+                </td>
+                <td>
+                    <div class="box">
+                        <span class="priceinbtc" data-last="0">£ -----</span>
                     </div>
                 </td>
             </tr>
